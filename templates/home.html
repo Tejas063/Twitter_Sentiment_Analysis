@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='styles/home.css') }}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+          <div class="container">
+            <div class="navbar">
+              <header>
+                <h1
+                  style="
+                    font-size: 30px;
+                    font-weight: bold;
+                    text-align: center;
+                    color: white;
+                  "
+                >
+                  <div class="logo">
+                    <a href="index.html">
+                      <img
+                        src="{{url_for('static', filename='logo.png')}}"
+                        align="middle"
+                        width="70px"
+                      />
+                    </a>
+                  </div>
+                  Twitter Sentiment Analysis
+                </h1>
+              </header>
+            </div>
+          </div>
+        </div>
+        <section>
+          <div class="contact-container">
+
+            <div class="col-2">
+                <button onclick="window.location.href='/topics'" class="btn">Sentiment about Topics</button>
+            </div>
+
+
+            <div class="col-2">
+                <button onclick="window.location.href='/custom'" class="btn">Sentiment for Custom tweet</button>
+
+          </div>
+        </div>
+        </section>
+
+  </body>
+</html>

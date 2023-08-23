@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter Search Results</title>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='styles/dataframe_style.css') }}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .styled-table {
+        border-collapse: collapse;
+        border: 1px solid black;
+      }
+      .styled-table th, .styled-table td {
+        border: 1px solid black;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <header>
+            <h1
+              style="
+                font-size: 30px;
+                font-weight: bold;
+                text-align: center;
+              "
+            >
+              <div class="logo">
+                <a href="index.html">
+                  <img
+                    src="{{url_for('static', filename='logo.png')}}"
+                    align="middle"
+                    width="70px"
+                  />
+                </a>
+              </div>
+              Twitter Sentiment Analysis
+            </h1>
+          </header>
+        </div>
+      </div>
+    </div>
+    <section>
+      <h1>Sentiments about the topic: {{topic}}</h1><br><br>
+      <div class="contact-container">
+        {{ data|safe }}
+      </div>
+    </section>
+  </body>
+</html>

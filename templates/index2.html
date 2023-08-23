@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter Sentiment Analysis</title>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='styles/mainpage.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='logo.png')}}" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <header>
+            <h1
+              style="
+                font-size: 30px;
+                font-weight: bold;
+                text-align: center;
+                color: white;
+              "
+              href="index.html"
+            >
+              <div class="logo">
+                <a href="index.html">
+                  <img src="{{url_for('static', filename='logo.png')}}" align="middle"  width="70px" />
+                </a>
+              </div>
+              Twitter Sentiment Analysis
+            </h1>
+          </header>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="contact-container">
+        <form name="passdata" action="/success" method="post">
+          <input
+            type="text"
+            name="topic"
+            placeholder="Enter tweet topic to analyze:"
+            required
+            value="{{ request.form['topic'] }}"
+          />
+          <button type="submit" class="btn">Submit</button>
+          <br /><br />
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
